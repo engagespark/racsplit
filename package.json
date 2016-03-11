@@ -1,0 +1,25 @@
+{
+  "name": "racsplit",
+  "version": "0.0.1",
+  "description": "Splitter for ractive.js component files",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engagespark/racsplit.git"
+  },
+  "keywords": [
+    "ractive",
+    "ractive-splitter",
+    "splitter",
+    "split"
+  ],
+  "author": "engageSpark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/engagespark/racsplit/issues"
+  },
+  "homepage": "https://github.com/engagespark/racsplit#readme"
+}
