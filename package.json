@@ -21,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/engagespark/racsplit/issues"
   },
-  "homepage": "https://github.com/engagespark/racsplit#readme"
+  "homepage": "https://github.com/engagespark/racsplit#readme",
+  "bin": {
+    "splitter": "index.js"
+  },
+  "dependencies": {
+    "node-argument-parser": "^0.1.0",
+    "ractive": "^0.7.3",
+    "rcu": "^0.7.0",
+    "sander": "^0.4.0"
+  }
 }

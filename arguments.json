@@ -1,0 +1,20 @@
+{
+    "arguments" : [
+        {
+            "full" : "type",
+            "short" : "t",
+            "value" : true,
+            "description" : "'css|script|modules|imports|template"
+        },
+        {
+            "full" : "path",
+            "short" : "p",
+            "value" : true,
+            "description" : "File path"
+        }
+    ],
+    "defaults" : {
+        "help" : true,
+        "helpExtras" : "Documentation can be fount at github.com/engagespark/racsplit/blob/master/README.md"
+    }
+}

@@ -1,9 +1,15 @@
-#!/usr/bin/node
+#!/usr/bin/env node
+
 
 var Ractive = require('ractive');
 var rcu = require('rcu');
 var sander = require('sander');
+var argumentParser = require("node-argument-parser");
+var argv = argumentParser.parse("./arguments.json", process);
 
+if (argv.help) {
+    process.exit();
+}
 
 // first arg goes to index 2 process.arg[2]
 // types [css|script|modules|imports|template]
@@ -26,20 +32,20 @@ var TYPE_EXTRACTER = {
     },
 };
 
-var type = process.argv[2];
-var fileName = process.argv[3];
+var type = argv.type;
+var filePath = argv.path;
 
 if (VALID_TYPES.indexOf(type) < 0) {
    console.error('Invalid type. Valid types are: ' + VALID_TYPES.join(', '));
    process.exit();
 }
 
-if (!fileName) {
+if (!filePath) {
     console.error('Invalid file path.');
     process.exit();
 }
 
-var func = sander.readFile(fileName).then(String).then(function(fileContent) {
+var func = sander.readFile(filePath).then(String).then(function(fileContent) {
     rcu.init(Ractive);
 
     return rcu.parse(fileContent);
