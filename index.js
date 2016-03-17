@@ -1,18 +1,24 @@
 #!/usr/bin/env node
 
-
 var Ractive = require('ractive');
 var rcu = require('rcu');
 var sander = require('sander');
-var argumentParser = require("node-argument-parser");
-var argv = argumentParser.parse("./arguments.json", process);
+var Args = require('arg-parser');
 
-if (argv.help) {
+var argv = new Args(
+    'Racsplit',
+    require('./package.json').version,
+    'Splitter for ractive.js component files.',
+    'https://github.com/engagespark/racsplit'
+);
+
+argv.add({ name: 'type', desc: 'output file type, default [script], types: [css|script|modules|imports|temp]', switches: [ '-t', '--type'], value: 'type' });
+argv.add({ name: 'path', desc: 'path to file', required: true });
+
+if (!argv.parse()) {
     process.exit();
 }
 
-// first arg goes to index 2 process.arg[2]
-// types [css|script|modules|imports|template]
 var VALID_TYPES = ['css', 'script', 'modules', 'imports', 'template'];
 var TYPE_EXTRACTER = {
     css: function(parsed) {
@@ -32,8 +38,8 @@ var TYPE_EXTRACTER = {
     },
 };
 
-var type = argv.type;
-var filePath = argv.path;
+var type = argv.params.type || 'script';
+var filePath = argv.params.path;
 
 if (VALID_TYPES.indexOf(type) < 0) {
    console.error('Invalid type. Valid types are: ' + VALID_TYPES.join(', '));
