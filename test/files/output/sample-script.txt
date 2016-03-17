@@ -1,0 +1,11 @@
+
+  component.exports = {
+    onrender: function () {
+      alert( 'initing component' );
+    },
+
+    data: {
+      letters: [ 'a', 'b', 'c' ]
+    }
+  };
+

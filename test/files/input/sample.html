@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<p>This is an imported 'foo' component: <foo/></p>
+
+<style>
+  p { color: red; }
+</style>
+
+<script>
+  component.exports = {
+    onrender: function () {
+      alert( 'initing component' );
+    },
+
+    data: {
+      letters: [ 'a', 'b', 'c' ]
+    }
+  };
+</script>
