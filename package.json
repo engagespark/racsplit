@@ -1,6 +1,6 @@
 {
   "name": "racsplit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Splitter for ractive.js component files",
   "main": "index.js",
   "scripts": {

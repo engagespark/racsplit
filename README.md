@@ -10,14 +10,23 @@ Installation
 
 Usage
 -----
-`$ racsplit [-t][--type] <type> [-p][--path] <path/to/file.html>`
+```
+usage: racsplit [options] <path>
 
+ <path>            path to file
 
-types: `css | script | modules | template | imports`
+ -t, --type=TYPE   output file type, default [script], types: [css|script|modules|imports|temp]
+ -h, --help        display help & usage
+ -v, --version     display cli name & version
 
+ https://github.com/engagespark/racsplit
+```
 
 Sample
 ------
-`$ racsplit -t script -p component/sample-component.html`
+* `$ racsplit component/sample-component.html`
+* `$ racsplit --type script component/sample-component.html`
 
-`$ racsplit --type script --path component/sample-component.html`
+License
+-------
+MIT Copyright (c) 2016 engageSPARK
