@@ -4,7 +4,7 @@
   "description": "Splitter for ractive.js component files",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test test/spec"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "arg-parser": "^1.2.0",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
     "ractive": "^0.7.3",
     "rcu": "^0.7.0",
     "sander": "^0.4.0"
