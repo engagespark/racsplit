@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/engagespark/racsplit#readme",
   "bin": {
-    "splitter": "index.js"
+    "racsplit": "index.js"
   },
   "dependencies": {
     "arg-parser": "^1.2.0",
